@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { secretAnnotations } from "@/constants/annotations";
 import type { FormKitFrameworkContext } from "@formkit/core";
 import { coreApiClient } from "@halo-dev/api-client";
 import {
@@ -14,6 +13,7 @@ import { computed, ref, type PropType } from "vue";
 import { useI18n } from "vue-i18n";
 import MingcuteFileSecurityLine from "~icons/mingcute/file-security-line";
 import RiEditBoxLine from "~icons/ri/edit-box-line";
+import { secretAnnotations } from "@/constants/annotations";
 import SecretCreationModal from "./components/SecretCreationModal.vue";
 import SecretEditModal from "./components/SecretEditModal.vue";
 import SecretListModal from "./components/SecretListModal.vue";
@@ -126,7 +126,7 @@ const missingKeys = computed(() => {
 </script>
 <template>
   <div
-    class="flex items-center gap-2 rounded-lg px-2.5 py-2 ring-1 ring-gray-100"
+    class="flex items-center gap-2 rounded-lg border border-gray-100 px-2.5 py-2"
   >
     <div
       class="inline-flex size-8 flex-none items-center justify-center rounded-full"

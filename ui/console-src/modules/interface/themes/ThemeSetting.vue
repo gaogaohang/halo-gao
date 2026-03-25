@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import StickyBlock from "@/components/sticky-block/StickyBlock.vue";
 import type { FormKitSchemaCondition, FormKitSchemaNode } from "@formkit/core";
 import type { Setting, Theme } from "@halo-dev/api-client";
 import { consoleApiClient } from "@halo-dev/api-client";
@@ -10,6 +9,8 @@ import { set } from "es-toolkit/compat";
 import type { Ref } from "vue";
 import { computed, inject, ref, toRaw } from "vue";
 import { useI18n } from "vue-i18n";
+import BackToTop from "@/components/back-to-top/BackToTop.vue";
+import StickyBlock from "@/components/sticky-block/StickyBlock.vue";
 
 const { t } = useI18n();
 const queryClient = useQueryClient();
@@ -100,5 +101,7 @@ await suspense();
         {{ $t("core.common.buttons.save") }}
       </VButton>
     </StickyBlock>
+
+    <BackToTop />
   </div>
 </template>
